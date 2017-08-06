@@ -35,3 +35,6 @@ class FunctionalTest(StaticLiveServerTestCase):
             rows = table.find_elements_by_tag_name('tr')
             self.assertIn(row_text, [row.text for row in rows])
         return self.wait_for(assert_row_in_list_table)
+
+    def get_item_input_box(self):
+        return self.browser.find_element_by_id('id_text')
